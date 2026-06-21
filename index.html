@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cima Absoluta — Expediciones de Alta Montaña</title>
+  <meta name="description" content="Expediciones de alta montaña guiadas por expertos certificados UIAGM. Aconcagua, Ojos del Salado y más. 15 años, 98.4% ratio de cumbre." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- ALTIMETER: Signature element — scroll progress bar -->
+  <div class="altimeter" aria-hidden="true">
+    <div class="altimeter__track">
+      <div class="altimeter__fill" id="altimeterFill"></div>
+      <div class="altimeter__marker" id="altimeterMarker">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 22 20 2 20"/></svg>
+      </div>
+    </div>
+    <span class="altimeter__label">6.961m</span>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav" id="mainNav">
+    <a href="#" class="nav__logo">CIMA<span>ABSOLUTA</span></a>
+    <ul class="nav__links">
+      <li><a href="#expediciones">Expediciones</a></li>
+      <li><a href="#proceso">El Proceso</a></li>
+      <li><a href="#guias">Guías</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#flagship" class="btn btn--accent btn--sm">Reservar plaza</a>
+    <button class="nav__burger" id="navBurger" aria-label="Menú">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <a href="#expediciones">Expediciones</a>
+    <a href="#proceso">El Proceso</a>
+    <a href="#guias">Guías</a>
+    <a href="#faq">FAQ</a>
+    <a href="#flagship" class="btn btn--accent">Reservar plaza</a>
+  </div>
+
+  <main>
+
+    <!-- ═══════════════════════════════════════════
+         1. HERO SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <div class="hero__bg">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=80" alt="Cumbre nevada al amanecer" class="hero__img" />
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__content container">
+        <p class="hero__eyebrow reveal-up">Expediciones certificadas UIAGM · Andes, Patagonia y Himalaya</p>
+        <h1 class="hero__title reveal-up" data-delay="100">
+          No conquistamos<br />
+          la montaña,<br />
+          <em>nos conquistamos<br />a nosotros mismos.</em>
+        </h1>
+        <p class="hero__subtitle reveal-up" data-delay="200">
+          Expediciones de alta montaña guiadas por expertos con certificación internacional.<br />
+          Desde el Aconcagua hasta el Dhaulagiri.
+        </p>
+
+        <div class="hero__filters reveal-up" data-delay="300">
+          <button class="filter-btn active" data-filter="all">Todas las rutas</button>
+          <button class="filter-btn" data-filter="beginner">Principiantes</button>
+          <button class="filter-btn" data-filter="trekking">Trekking de Altura</button>
+          <button class="filter-btn" data-filter="summit">+6.000 metros</button>
+        </div>
+
+        <div class="hero__cta reveal-up" data-delay="400">
+          <a href="#expediciones" class="btn btn--accent btn--lg btn--pulse">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
+            Planificar mi ascenso
+          </a>
+          <a href="#manifiesto" class="btn btn--ghost btn--lg">
+            Nuestra filosofía
+          </a>
+        </div>
+      </div>
+
+      <div class="hero__scroll-hint">
+        <span>Descend</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         2. TRUST BAR
+    ═══════════════════════════════════════════ -->
+    <section class="trustbar" id="trustbar">
+      <div class="container">
+        <div class="trustbar__grid">
+          <div class="trustbar__stat" data-count="15" data-suffix="+ Años">
+            <span class="trustbar__number" data-target="15">0</span>
+            <span class="trustbar__suffix">+ Años guiando</span>
+          </div>
+          <div class="trustbar__divider"></div>
+          <div class="trustbar__stat" data-count="98" data-suffix="% Cumbre">
+            <span class="trustbar__number" data-target="98" data-decimal=".4">0</span>
+            <span class="trustbar__suffix">% Ratio de cumbre</span>
+          </div>
+          <div class="trustbar__divider"></div>
+          <div class="trustbar__stat">
+            <span class="trustbar__number trustbar__number--zero">0</span>
+            <span class="trustbar__suffix">Accidentes graves</span>
+          </div>
+          <div class="trustbar__divider"></div>
+          <div class="trustbar__stat">
+            <span class="trustbar__badge">UIAGM</span>
+            <span class="trustbar__suffix">Guías certificados</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         3. MANIFESTO SECTION
+    ═══════════════════════════════════════════ -->
+    <section class="manifesto" id="manifiesto">
+      <div class="container">
+        <div class="manifesto__header reveal-up">
+          <p class="section-eyebrow">Por qué Cima Absoluta</p>
+          <h2 class="section-title">Tres principios que nunca<br />negociamos en la montaña</h2>
+        </div>
+
+        <div class="manifesto__grid">
+          <div class="manifesto__card tilt-card reveal-up" data-delay="0">
+            <div class="manifesto__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Seguridad Obsesiva</h3>
+            <p>Protocolos de evacuación de helicóptero en menos de 2 horas desde cualquier punto de la ruta. Comunicación satelital en cada expedición, sin excepción. La cumbre es opcional, regresar es obligatorio.</p>
+            <div class="manifesto__card-border"></div>
+          </div>
+
+          <div class="manifesto__card tilt-card reveal-up" data-delay="150">
+            <div class="manifesto__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Grupos Íntimos</h3>
+            <p>Máximo 6 personas por expedición. Sin masificación, sin que nadie se pierda en el grupo. Cada alpinista recibe atención personalizada del guía y un plan de entrenamiento previo específico.</p>
+            <div class="manifesto__card-border"></div>
+          </div>
+
+          <div class="manifesto__card tilt-card reveal-up" data-delay="300">
+            <div class="manifesto__card-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </div>
+            <h3>Campo Base Premium</h3>
+            <p>Menús diseñados por chef de montaña para máximo rendimiento a altura: alta densidad calórica, digestibilidad óptima y temperatura. Porque rendir en la cima empieza por comer bien en el campo base.</p>
+            <div class="manifesto__card-border"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         4. INTERACTIVE CATALOG
+    ═══════════════════════════════════════════ -->
+    <section class="catalog" id="expediciones">
+      <div class="container">
+        <div class="catalog__header reveal-up">
+          <p class="section-eyebrow">Nuestras expediciones</p>
+          <h2 class="section-title">Elige tu próxima cumbre</h2>
+          <p class="section-desc">Filtra por nivel de experiencia y encuentra la expedición que desafía exactamente lo que necesitas superar.</p>
+        </div>
+
+        <div class="catalog__tabs reveal-up" data-delay="100">
+          <button class="tab-btn active" data-tab="all">Todas</button>
+          <button class="tab-btn" data-tab="1">★ Iniciación</button>
+          <button class="tab-btn" data-tab="2">★★ Intermedio</button>
+          <button class="tab-btn" data-tab="3">★★★ Avanzado</button>
+          <button class="tab-btn" data-tab="4">★★★★ Experto</button>
+        </div>
+
+        <div class="catalog__grid" id="catalogGrid">
+          <!-- JS renders expedition cards here -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         5. FLAGSHIP / FOMO
+    ═══════════════════════════════════════════ -->
+    <section class="flagship" id="flagship">
+      <div class="flagship__bg">
+        <img src="https://images.unsplash.com/photo-1589182337358-2cb63099350c?w=1800&q=80" alt="Aconcagua — La cumbre más alta de América" />
+        <div class="flagship__overlay"></div>
+      </div>
+
+      <div class="flagship__content container">
+        <div class="flagship__tag reveal-up">⚑ Expedición Estrella</div>
+        <h2 class="flagship__title reveal-up" data-delay="100">Aconcagua<br /><span>6.961 metros</span></h2>
+        <p class="flagship__sub reveal-up" data-delay="200">La cumbre más alta fuera del Himalaya. El techo de América. La prueba definitiva de quién eres cuando el oxígeno escasea y el viento no perdona.</p>
+
+        <div class="flagship__urgency reveal-up" data-delay="300">
+          <div class="flagship__countdown">
+            <p class="flagship__countdown-label">Próxima ventana climática</p>
+            <div class="flagship__countdown-timer" id="countdownTimer">
+              <div class="countdown-unit"><span id="cdDays">--</span><small>días</small></div>
+              <div class="countdown-sep">:</div>
+              <div class="countdown-unit"><span id="cdHours">--</span><small>horas</small></div>
+              <div class="countdown-sep">:</div>
+              <div class="countdown-unit"><span id="cdMins">--</span><small>min</small></div>
+            </div>
+          </div>
+          <div class="flagship__slots">
+            <div class="slots__bar">
+              <div class="slots__fill" style="width: 62.5%"></div>
+            </div>
+            <p><strong>Solo quedan 3 de 8 plazas</strong> · Temporada Noviembre–Enero</p>
+          </div>
+        </div>
+
+        <div class="flagship__actions reveal-up" data-delay="400">
+          <a href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20reservar%20una%20plaza%20para%20el%20Aconcagua" target="_blank" class="btn btn--accent btn--lg">
+            Reservar mi plaza ahora
+          </a>
+          <div class="flagship__price">
+            <span class="flagship__price-from">desde</span>
+            <span class="flagship__price-amount">USD 4.800</span>
+            <span class="flagship__price-note">todo incluido</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         6. JOURNEY TIMELINE
+    ═══════════════════════════════════════════ -->
+    <section class="journey" id="proceso">
+      <div class="container">
+        <div class="journey__header reveal-up">
+          <p class="section-eyebrow">El camino a la cumbre</p>
+          <h2 class="section-title">De cero a la cima en<br />cuatro etapas</h2>
+        </div>
+
+        <div class="journey__timeline" id="journeyTimeline">
+          <div class="journey__line">
+            <div class="journey__line-fill" id="journeyLineFill"></div>
+          </div>
+
+          <div class="journey__step" data-step="1">
+            <div class="journey__step-dot"></div>
+            <div class="journey__step-content">
+              <div class="journey__step-num">01</div>
+              <h3>Diagnóstico de nivel</h3>
+              <p>Una videollamada de 30 minutos con tu guía asignado. Evaluamos tu experiencia, condición física actual y definimos qué expedición es la correcta para ti ahora. Sin presión de venta, solo honestidad alpinista.</p>
+            </div>
+          </div>
+
+          <div class="journey__step" data-step="2">
+            <div class="journey__step-dot"></div>
+            <div class="journey__step-content">
+              <div class="journey__step-num">02</div>
+              <h3>Plan de entrenamiento</h3>
+              <p>Recibirás un plan de 12 a 16 semanas personalizado. Cardio de zona 2, series de fuerza funcional y días de caminata con carga. Además: guía de aclimatación progresiva y nutrición de altitud.</p>
+            </div>
+          </div>
+
+          <div class="journey__step" data-step="3">
+            <div class="journey__step-dot"></div>
+            <div class="journey__step-content">
+              <div class="journey__step-num">03</div>
+              <h3>Revisión técnica de equipo</h3>
+              <p>Lista exhaustiva de equipamiento validada por nuestros guías. Revisión por videollamada de tu mochila completa antes de volar. Acceso a nuestro convenio de alquiler de equipo técnico premium a precio de coste.</p>
+            </div>
+          </div>
+
+          <div class="journey__step" data-step="4">
+            <div class="journey__step-dot"></div>
+            <div class="journey__step-content">
+              <div class="journey__step-num">04</div>
+              <h3>El asalto a la cumbre</h3>
+              <p>Días de aclimatación progresiva, noches en los campos de altura, la madrugada del summit push y el silencio absoluto de la cima. Luego, el descenso más largo de tu vida y una persona distinta que sube al avión de regreso.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         7. INTERACTIVE LEVEL TEST
+    ═══════════════════════════════════════════ -->
+    <section class="leveltest" id="test">
+      <div class="container">
+        <div class="leveltest__inner reveal-up">
+          <div class="leveltest__header">
+            <p class="section-eyebrow">Test rápido</p>
+            <h2 class="section-title">¿Qué expedición<br />te espera?</h2>
+            <p class="section-desc">Dos preguntas. Resultado instantáneo.</p>
+          </div>
+
+          <div class="leveltest__form" id="levelTestForm">
+            <div class="leveltest__question">
+              <label>¿Cuál es la mayor altura que has alcanzado?</label>
+              <select id="q1" class="leveltest__select">
+                <option value="">— Selecciona —</option>
+                <option value="sea">Nivel del mar (primera vez)</option>
+                <option value="2000">Hasta 2.000m (montaña baja)</option>
+                <option value="4000">Hasta 4.000m (alta montaña básica)</option>
+                <option value="5000">Hasta 5.000m (expedicionario)</option>
+                <option value="6000">Más de 6.000m (alpinista)</option>
+              </select>
+            </div>
+
+            <div class="leveltest__question">
+              <label>¿Cuántos días a la semana entrenas actividad aeróbica?</label>
+              <select id="q2" class="leveltest__select">
+                <option value="">— Selecciona —</option>
+                <option value="0">0–1 días (sedentario activo)</option>
+                <option value="2">2–3 días (activo regular)</option>
+                <option value="4">4–5 días (atleta aficionado)</option>
+                <option value="6">6–7 días (deportista de rendimiento)</option>
+              </select>
+            </div>
+
+            <button class="btn btn--accent btn--lg" id="testSubmitBtn" style="margin-top:8px">
+              Ver mi perfil de montaña
+            </button>
+          </div>
+
+          <div class="leveltest__result" id="testResult" style="display:none">
+            <div class="leveltest__result-badge">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#FF5416" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
+            </div>
+            <p class="leveltest__result-label">Tu expedición ideal es:</p>
+            <h3 class="leveltest__result-name" id="resultName">Nevado Chachani</h3>
+            <p class="leveltest__result-desc" id="resultDesc">Un 6.075m en Perú perfecto para tu nivel. Confirmemos tu cupo con un guía.</p>
+            <a href="https://wa.me/5491100000000?text=Hice%20el%20test%20y%20quiero%20saber%20m%C3%A1s%20sobre%20mi%20expedici%C3%B3n%20recomendada" target="_blank" class="btn btn--accent btn--lg">
+              Hablar con un guía por WhatsApp
+            </a>
+            <button class="btn btn--ghost btn--sm" id="testRetryBtn">Repetir test</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         8. TESTIMONIALS
+    ═══════════════════════════════════════════ -->
+    <section class="testimonials" id="testimonials">
+      <div class="container">
+        <div class="testimonials__header reveal-up">
+          <p class="section-eyebrow">Ellos ya subieron</p>
+          <h2 class="section-title">Lo que cambia cuando llegas<br />a la cima</h2>
+        </div>
+
+        <div class="testimonials__carousel reveal-up" data-delay="100">
+          <div class="testimonials__track" id="testimonialsTrack">
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p>Lloré cuando vi amanecer a 6.000 metros. El equipo me sostuvo cuando pensé en rendirme a las 3 de la mañana. Bajé siendo otra persona. Literalmente no reconocí mi voz cuando llamé a mi madre desde el campo base.</p>
+              <div class="testimonial-card__author">
+                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=80&q=80" alt="Lucía M." />
+                <div>
+                  <strong>Lucía Marchetti</strong>
+                  <span>Aconcagua · 6.961m · Enero 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p>Soy médico. Entiendo el riesgo. Por eso investigué durante meses antes de elegir una empresa. El protocolo de seguridad de Cima Absoluta es el más riguroso que encontré. Y la cumbre del Ojos del Salado fue la experiencia más pura de mi vida.</p>
+              <div class="testimonial-card__author">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=80&q=80" alt="Tomás R." />
+                <div>
+                  <strong>Dr. Tomás Reyes</strong>
+                  <span>Ojos del Salado · 6.893m · Marzo 2024</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p>Tengo 52 años y toda mi vida pensé que la montaña no era para mí. Hice el test del nivel, me dijeron que el Chachani era mi punto de partida, y en noviembre subí mi primer 6.000. Ahora ya estoy mirando el Aconcagua.</p>
+              <div class="testimonial-card__author">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=80&q=80" alt="Roberto P." />
+                <div>
+                  <strong>Roberto Paravano</strong>
+                  <span>Chachani 6.075m → Aconcagua (preparando)</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="testimonial-card">
+              <div class="testimonial-card__quote">"</div>
+              <p>El momento más honesto de mi vida fue a las 5.800m cuando me pregunté por qué seguía. Y la respuesta que encontré cambió cómo vivo todo lo demás. Ningún retiro de bienestar me ha dado lo que esa madrugada de cumbre.</p>
+              <div class="testimonial-card__author">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&q=80" alt="Valentina K." />
+                <div>
+                  <strong>Valentina Kowalski</strong>
+                  <span>Volcán Lanín · 3.747m · Agosto 2024</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="testimonials__controls">
+            <button class="carousel-btn" id="testimonialPrev" aria-label="Anterior">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+            </button>
+            <div class="carousel-dots" id="carouselDots"></div>
+            <button class="carousel-btn" id="testimonialNext" aria-label="Siguiente">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         9. GUIDES TEAM
+    ═══════════════════════════════════════════ -->
+    <section class="guides" id="guias">
+      <div class="container">
+        <div class="guides__header reveal-up">
+          <p class="section-eyebrow">Las personas que te llevan</p>
+          <h2 class="section-title">Nuestros guías no son<br />solo técnicos. Son mentores.</h2>
+        </div>
+
+        <div class="guides__grid">
+
+          <div class="guide-card reveal-up" data-delay="0">
+            <div class="guide-card__inner">
+              <div class="guide-card__front">
+                <div class="guide-card__img-wrap">
+                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Guía Marcos Vidal" />
+                </div>
+                <div class="guide-card__info">
+                  <div class="guide-card__badge">UIAGM</div>
+                  <h3>Marcos Vidal</h3>
+                  <p class="guide-card__role">Guía Principal · 22 años en montaña</p>
+                  <p class="guide-card__peak">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
+                    Cumbre favorita: Ojos del Salado
+                  </p>
+                </div>
+              </div>
+              <div class="guide-card__back">
+                <div class="guide-card__badge">UIAGM</div>
+                <blockquote>"La montaña no se conquista con piernas, se conquista con la decisión de estar completamente presente."</blockquote>
+                <p class="guide-card__back-name">— Marcos Vidal</p>
+                <p class="guide-card__back-stats">127 cumbres × 14 expediciones guiadas</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-card reveal-up" data-delay="150">
+            <div class="guide-card__inner">
+              <div class="guide-card__front">
+                <div class="guide-card__img-wrap">
+                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Guía Sofía Ramos" />
+                </div>
+                <div class="guide-card__info">
+                  <div class="guide-card__badge">UIAGM</div>
+                  <h3>Sofía Ramos</h3>
+                  <p class="guide-card__role">Médica de Altura & Guía · 15 años</p>
+                  <p class="guide-card__peak">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
+                    Cumbre favorita: Aconcagua Sur
+                  </p>
+                </div>
+              </div>
+              <div class="guide-card__back">
+                <div class="guide-card__badge">UIAGM</div>
+                <blockquote>"El cuerpo sabe más de lo que la mente le deja decir. En la altura, aprender a escucharlo es la diferencia entre la cumbre y el regreso."</blockquote>
+                <p class="guide-card__back-name">— Sofía Ramos</p>
+                <p class="guide-card__back-stats">Médica de urgencias · 89 cumbres</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="guide-card reveal-up" data-delay="300">
+            <div class="guide-card__inner">
+              <div class="guide-card__front">
+                <div class="guide-card__img-wrap">
+                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Guía Esteban Iriarte" />
+                </div>
+                <div class="guide-card__info">
+                  <div class="guide-card__badge">UIAGM</div>
+                  <h3>Esteban Iriarte</h3>
+                  <p class="guide-card__role">Especialista Himalaya · 18 años</p>
+                  <p class="guide-card__peak">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
+                    Cumbre favorita: Mera Peak, Nepal
+                  </p>
+                </div>
+              </div>
+              <div class="guide-card__back">
+                <div class="guide-card__badge">UIAGM</div>
+                <blockquote>"La cumbre no es el destino, es el lugar donde te das permiso de creer que eres capaz de todo lo que siempre quisiste."</blockquote>
+                <p class="guide-card__back-name">— Esteban Iriarte</p>
+                <p class="guide-card__back-stats">Matterhorn · Elbrus · Mera Peak</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         10a. FAQ — OBJECTION KILLER
+    ═══════════════════════════════════════════ -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <div class="faq__header reveal-up">
+          <p class="section-eyebrow">Tus dudas, resueltas</p>
+          <h2 class="section-title">Las cuatro preguntas<br />que siempre hacen</h2>
+        </div>
+
+        <div class="faq__list reveal-up" data-delay="100">
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué pasa si me da mal de altura?</span>
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>El mal de altura (AMS) es predecible y manejable con protocolos correctos. En Cima Absoluta, diseñamos cada itinerario con días de aclimatación progresiva siguiendo la regla "sube alto, duerme bajo". Sofía, nuestra guía-médica, evalúa diariamente síntomas de AMS, HACE o HAPE. Ante cualquier señal de alerta, el protocolo es claro: descenso inmediato. Nunca hemos perdido tiempo debatiendo esa decisión.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué condición física necesito realmente?</span>
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Depende de la expedición. Para el Aconcagua, necesitas ser capaz de caminar 6–8 horas con 15kg de mochila durante varios días consecutivos. Para el Chachani (el mejor primer 6.000), con 3 días de cardio semanal y 4 meses de preparación es suficiente. El test de nivel de arriba te da una primera orientación, y la videollamada de diagnóstico confirma si estás listo o cuánto tiempo necesitas para prepararte.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Tengo que comprar todo el equipo técnico?</span>
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>No. Antes de cada expedición recibirás la lista completa. Los equipos básicos (crampones, piolet, arnés, casco) los puedes alquilar a través de nuestro convenio a precio de coste. Lo que sí recomendamos comprar: tus botas (el calzado es personal e intransferible), ropa de base y medias técnicas. Presupuesto orientativo de compras propias: USD 400–700 para una expedición de nivel medio.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="faq__item">
+            <button class="faq__question" aria-expanded="false">
+              <span>¿Qué pasa en caso de emergencia en la montaña?</span>
+              <svg class="faq__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq__answer">
+              <div class="faq__answer-inner">
+                <p>Cada expedición lleva: comunicador satelital Garmin inReach (cobertura global), equipo de primeros auxilios de altura con medicación de emergencia (dexametasona, nifedipino, acetazolamida), y protocolo activado con compañía de rescate en helicóptero con menos de 2 horas de respuesta. Además, requerimos que todos los participantes cuenten con seguro de rescate en montaña — te ayudamos a contratar el adecuado antes de viajar.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         10b. LEAD MAGNET
+    ═══════════════════════════════════════════ -->
+    <section class="leadmagnet" id="leadmagnet">
+      <div class="container">
+        <div class="leadmagnet__inner reveal-up">
+          <div class="leadmagnet__icon">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF5416" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+          </div>
+          <div class="leadmagnet__text">
+            <p class="section-eyebrow">Descarga gratuita</p>
+            <h2>El Checklist definitivo de<br />equipamiento para Alta Montaña</h2>
+            <p>47 ítems organizados por categoría, con marcas recomendadas y presupuesto orientativo. El PDF que necesitas antes de tu primera expedición.</p>
+          </div>
+          <form class="leadmagnet__form" id="leadmagnetForm">
+            <input type="email" class="leadmagnet__input" placeholder="tu@email.com" required />
+            <button type="submit" class="btn btn--accent btn--lg">
+              Descargar gratis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </button>
+          </form>
+          <p class="leadmagnet__disclaimer">Sin spam. Baja en menos de 30 segundos.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="#" class="nav__logo">CIMA<span>ABSOLUTA</span></a>
+          <p>Expediciones de alta montaña certificadas UIAGM. Desde los Andes hasta el Himalaya.</p>
+          <div class="footer__social">
+            <a href="#" aria-label="Instagram">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.95C5.12 20 12 20 12 20s6.88 0 8.59-.47a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+            </a>
+            <a href="https://wa.me/5491100000000" aria-label="WhatsApp">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+            </a>
+          </div>
+        </div>
+        <div class="footer__nav">
+          <h4>Expediciones</h4>
+          <ul>
+            <li><a href="#">Aconcagua 6.961m</a></li>
+            <li><a href="#">Ojos del Salado 6.893m</a></li>
+            <li><a href="#">Chachani 6.075m</a></li>
+            <li><a href="#">Trekking Patagonia</a></li>
+            <li><a href="#">Himalaya & Nepal</a></li>
+          </ul>
+        </div>
+        <div class="footer__nav">
+          <h4>Empresa</h4>
+          <ul>
+            <li><a href="#">Sobre nosotros</a></li>
+            <li><a href="#">Nuestros guías</a></li>
+            <li><a href="#">Certificaciones</a></li>
+            <li><a href="#">Política de cancelación</a></li>
+            <li><a href="#">Blog de montaña</a></li>
+          </ul>
+        </div>
+        <div class="footer__contact">
+          <h4>Contacto</h4>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Mendoza, Argentina
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.07h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.7A16 16 0 0 0 15.3 16.09l1-1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 23 17.02v-.1z"/></svg>
+            +54 9 261 000-0000
+          </p>
+          <p>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hola@cimaabsoluta.com
+          </p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2025 Cima Absoluta. Todos los derechos reservados.</p>
+        <p>Diseñado para alpinistas, por alpinistas.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
