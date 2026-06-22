@@ -155,75 +155,108 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
-         4. INTERACTIVE CATALOG
+         4. CURSOS
     ═══════════════════════════════════════════ -->
-    <section class="catalog" id="expediciones">
-      <div class="container">
-        <div class="catalog__header reveal-up">
-          <p class="section-eyebrow">Nuestras expediciones</p>
-          <h2 class="section-title">Elige tu próxima cumbre</h2>
-          <p class="section-desc">Filtra por nivel de experiencia y encuentra la expedición que desafía exactamente lo que necesitas superar.</p>
-        </div>
 
-        <div class="catalog__tabs reveal-up" data-delay="100">
-          <button class="tab-btn active" data-tab="all">Todas</button>
-          <button class="tab-btn" data-tab="1">★ Iniciación</button>
-          <button class="tab-btn" data-tab="2">★★ Intermedio</button>
-          <button class="tab-btn" data-tab="3">★★★ Avanzado</button>
-          <button class="tab-btn" data-tab="4">★★★★ Experto</button>
-        </div>
+<section class="courses" id="cursos">
 
-        <div class="catalog__grid" id="catalogGrid">
-          <!-- JS renders expedition cards here -->
-        </div>
-      </div>
-    </section>
+  <div class="courses__bg">
+    <img src="assets/courses-bg.jpg" alt="" class="courses__bg-img">
+    <div class="courses__overlay"></div>
+  </div>
 
-    <!-- ═══════════════════════════════════════════
-         5. FLAGSHIP / FOMO
-    ═══════════════════════════════════════════ -->
-    <section class="flagship" id="flagship">
-      <div class="flagship__bg">
-        <img src="https://images.unsplash.com/photo-1589182337358-2cb63099350c?w=1800&q=80" alt="Aconcagua — La cumbre más alta de América" />
-        <div class="flagship__overlay"></div>
-      </div>
+  <div class="container">
 
-      <div class="flagship__content container">
-        <div class="flagship__tag reveal-up">⚑ Expedición Estrella</div>
-        <h2 class="flagship__title reveal-up" data-delay="100">Aconcagua<br /><span>6.961 metros</span></h2>
-        <p class="flagship__sub reveal-up" data-delay="200">La cumbre más alta fuera del Himalaya. El techo de América. La prueba definitiva de quién eres cuando el oxígeno escasea y el viento no perdona.</p>
+    <div class="courses__header">
+      <p class="section-eyebrow">EXPEDICIONES</p>
+      <h2 class="courses__title">TU PRÓXIMO RETO</h2>
+    </div>
 
-        <div class="flagship__urgency reveal-up" data-delay="300">
-          <div class="flagship__countdown">
-            <p class="flagship__countdown-label">Próxima ventana climática</p>
-            <div class="flagship__countdown-timer" id="countdownTimer">
-              <div class="countdown-unit"><span id="cdDays">--</span><small>días</small></div>
-              <div class="countdown-sep">:</div>
-              <div class="countdown-unit"><span id="cdHours">--</span><small>horas</small></div>
-              <div class="countdown-sep">:</div>
-              <div class="countdown-unit"><span id="cdMins">--</span><small>min</small></div>
+    <button class="courses__nav courses__nav--prev" id="coursesPrev">
+      ‹
+    </button>
+
+    <div class="courses__viewport">
+      <div class="courses__track" id="coursesTrack">
+
+        <!-- CARD 1 -->
+        <article class="course-card">
+          <div class="course-card__image">
+            <!-- PLACEHOLDER -->
+          </div>
+
+          <div class="course-card__body">
+            <span class="course-card__level advanced">AVANZADO</span>
+
+            <h3>CURSO 1</h3>
+            <p>Ubicación</p>
+
+            <div class="course-card__info">
+              <strong>Preparación previa:</strong> X meses<br>
+              <strong>Duración:</strong> X días
             </div>
           </div>
-          <div class="flagship__slots">
-            <div class="slots__bar">
-              <div class="slots__fill" style="width: 62.5%"></div>
-            </div>
-            <p><strong>Solo quedan 3 de 8 plazas</strong> · Temporada Noviembre–Enero</p>
-          </div>
-        </div>
+        </article>
 
-        <div class="flagship__actions reveal-up" data-delay="400">
-          <a href="https://wa.me/5491100000000?text=Hola%2C%20quiero%20reservar%20una%20plaza%20para%20el%20Aconcagua" target="_blank" class="btn btn--accent btn--lg">
-            Reservar mi plaza ahora
-          </a>
-          <div class="flagship__price">
-            <span class="flagship__price-from">desde</span>
-            <span class="flagship__price-amount">USD 4.800</span>
-            <span class="flagship__price-note">todo incluido</span>
+        <!-- CARD 2 -->
+        <article class="course-card featured">
+          <div class="course-card__image"></div>
+
+          <div class="course-card__body">
+            <span class="course-card__level expert">EXPERTO</span>
+
+            <h3>CURSO 2</h3>
+            <p>Ubicación</p>
+
+            <div class="course-card__info">
+              <strong>Preparación previa:</strong> X meses<br>
+              <strong>Duración:</strong> X días
+            </div>
           </div>
-        </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="course-card">
+          <div class="course-card__image"></div>
+
+          <div class="course-card__body">
+            <span class="course-card__level intermediate">INTERMEDIO</span>
+
+            <h3>CURSO 3</h3>
+            <p>Ubicación</p>
+
+            <div class="course-card__info">
+              <strong>Preparación previa:</strong> X meses<br>
+              <strong>Duración:</strong> X días
+            </div>
+          </div>
+        </article>
+
+        <!-- CARD 4 -->
+        <article class="course-card">
+          <div class="course-card__image"></div>
+        </article>
+
+        <!-- CARD 5 -->
+        <article class="course-card">
+          <div class="course-card__image"></div>
+        </article>
+
+        <!-- CARD 6 -->
+        <article class="course-card">
+          <div class="course-card__image"></div>
+        </article>
+
       </div>
-    </section>
+    </div>
+
+    <button class="courses__nav courses__nav--next" id="coursesNext">
+      ›
+    </button>
+
+  </div>
+
+</section>
 
     <!-- ═══════════════════════════════════════════
          6. JOURNEY TIMELINE

@@ -780,3 +780,42 @@ document.addEventListener('DOMContentLoaded', () => {
   initLeadMagnet();
   initSmoothScroll();
 });
+
+function initCoursesCarousel() {
+
+  const track = document.getElementById("coursesTrack");
+  const prev = document.getElementById("coursesPrev");
+  const next = document.getElementById("coursesNext");
+
+  if (!track) return;
+
+  let index = 0;
+  const visible = 3;
+  const total = 6;
+
+  function update() {
+    const cardWidth = track.children[0].offsetWidth + 30;
+    track.style.transform =
+      `translateX(-${index * cardWidth}px)`;
+  }
+
+  next.addEventListener("click", () => {
+    if (index < total - visible) {
+      index++;
+      update();
+    }
+  });
+
+  prev.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      update();
+    }
+  });
+
+  window.addEventListener("resize", update);
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  initCoursesCarousel();
+});
