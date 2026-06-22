@@ -7,7 +7,7 @@
   <meta name="description" content="Expediciones de alta montaña guiadas por expertos certificados UIAGM. Aconcagua, Ojos del Salado y más. 15 años, 98.4% ratio de cumbre." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -25,25 +25,25 @@
 
   <!-- NAV -->
   <nav class="nav" id="mainNav">
-    <a href="#" class="nav__logo">CIMA<span>ABSOLUTA</span></a>
+    <a href="#" class="nav__logo">CÚSPIDES</a>
     <ul class="nav__links">
+      <li><a href="#proceso">Entrenamiento</a></li>
       <li><a href="#expediciones">Expediciones</a></li>
-      <li><a href="#proceso">El Proceso</a></li>
-      <li><a href="#guias">Guías</a></li>
-      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#guias">Equipamiento</a></li>
+      <li><a href="#faq">Nosotros</a></li>
     </ul>
-    <a href="#flagship" class="btn btn--accent btn--sm">Reservar plaza</a>
+    <a href="#flagship" class="btn btn--reservar">Reservar</a>
     <button class="nav__burger" id="navBurger" aria-label="Menú">
       <span></span><span></span><span></span>
     </button>
   </nav>
 
   <div class="nav__mobile" id="navMobile">
+    <a href="#proceso">Entrenamiento</a>
     <a href="#expediciones">Expediciones</a>
-    <a href="#proceso">El Proceso</a>
-    <a href="#guias">Guías</a>
-    <a href="#faq">FAQ</a>
-    <a href="#flagship" class="btn btn--accent">Reservar plaza</a>
+    <a href="#guias">Equipamiento</a>
+    <a href="#faq">Nosotros</a>
+    <a href="#flagship" class="btn btn--reservar">Reservar</a>
   </div>
 
   <main>
@@ -53,43 +53,14 @@
     ═══════════════════════════════════════════ -->
     <section class="hero" id="hero">
       <div class="hero__bg">
-        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=80" alt="Cumbre nevada al amanecer" class="hero__img" />
+        <img src="assets/home-img.png" alt="Montañas al atardecer" class="hero__img" />
         <div class="hero__overlay"></div>
       </div>
 
       <div class="hero__content container">
-        <p class="hero__eyebrow reveal-up">Expediciones certificadas UIAGM · Andes, Patagonia y Himalaya</p>
-        <h1 class="hero__title reveal-up" data-delay="100">
-          No conquistamos<br />
-          la montaña,<br />
-          <em>nos conquistamos<br />a nosotros mismos.</em>
+        <h1 class="hero__title">
+          UNA SOLA FORMA DE DESCUBRIR<br />DE QUÉ SOS CAPAZ
         </h1>
-        <p class="hero__subtitle reveal-up" data-delay="200">
-          Expediciones de alta montaña guiadas por expertos con certificación internacional.<br />
-          Desde el Aconcagua hasta el Dhaulagiri.
-        </p>
-
-        <div class="hero__filters reveal-up" data-delay="300">
-          <button class="filter-btn active" data-filter="all">Todas las rutas</button>
-          <button class="filter-btn" data-filter="beginner">Principiantes</button>
-          <button class="filter-btn" data-filter="trekking">Trekking de Altura</button>
-          <button class="filter-btn" data-filter="summit">+6.000 metros</button>
-        </div>
-
-        <div class="hero__cta reveal-up" data-delay="400">
-          <a href="#expediciones" class="btn btn--accent btn--lg btn--pulse">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
-            Planificar mi ascenso
-          </a>
-          <a href="#manifiesto" class="btn btn--ghost btn--lg">
-            Nuestra filosofía
-          </a>
-        </div>
-      </div>
-
-      <div class="hero__scroll-hint">
-        <span>Descend</span>
-        <div class="hero__scroll-line"></div>
       </div>
     </section>
 
@@ -99,24 +70,24 @@
     <section class="trustbar" id="trustbar">
       <div class="container">
         <div class="trustbar__grid">
+          <div class="trustbar__stat" data-count="6" data-suffix="+ Años">
+            <span class="trustbar__number" data-target="6">0</span>
+            <span class="trustbar__suffix">+ Meses de preparación</span>
+          </div>
+          <div class="trustbar__divider"></div>
+          <div class="trustbar__stat" data-count="200" data-suffix="+ Años">
+            <span class="trustbar__number" data-target="200">0</span>
+            <span class="trustbar__suffix">+ Aventureros inscriptos</span>
+          </div>
+          <div class="trustbar__divider"></div>
           <div class="trustbar__stat" data-count="15" data-suffix="+ Años">
             <span class="trustbar__number" data-target="15">0</span>
             <span class="trustbar__suffix">+ Años guiando</span>
           </div>
           <div class="trustbar__divider"></div>
-          <div class="trustbar__stat" data-count="98" data-suffix="% Cumbre">
-            <span class="trustbar__number" data-target="98" data-decimal=".4">0</span>
-            <span class="trustbar__suffix">% Ratio de cumbre</span>
-          </div>
-          <div class="trustbar__divider"></div>
-          <div class="trustbar__stat">
-            <span class="trustbar__number trustbar__number--zero">0</span>
-            <span class="trustbar__suffix">Accidentes graves</span>
-          </div>
-          <div class="trustbar__divider"></div>
-          <div class="trustbar__stat">
-            <span class="trustbar__badge">UIAGM</span>
-            <span class="trustbar__suffix">Guías certificados</span>
+          <div class="trustbar__stat" data-count="1" data-suffix="+ Años">
+            <span class="trustbar__number" data-target="1">0</span>
+            <span class="trustbar__suffix">Objetivo: llegar a la cima</span>
           </div>
         </div>
       </div>
