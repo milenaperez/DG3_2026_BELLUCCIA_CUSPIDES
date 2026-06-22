@@ -144,22 +144,210 @@ function initTrustBar() {
    3D TILT CARDS — Manifesto section
 ═══════════════════════════════════════════ */
 
-function initTiltCards() {
-  if (window.matchMedia('(hover: none)').matches) return; // Skip on touch devices
+/**
+ * MANIFESTO LINE ANIMATIONS
+ * Animaciones para la línea SVG única de la sección manifesto
+ */
 
-  $$('.tilt-card').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
-      card.style.transform = `perspective(800px) rotateY(${x * 12}deg) rotateX(${-y * 12}deg) scale(1.02)`;
-    });
+class ManifestoLineAnimations {
+  constructor() {
+    this.lineContainer = document.querySelector('.manifesto__line-container');
+    this.linePath = document.querySelector('.manifesto__line-animate');
+    this.init();
+  }
 
-    card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(800px) rotateY(0deg) rotateX(0deg) scale(1)';
+  init() {
+    if (!this.linePath) {
+      console.warn('No SVG line path found');
+      return;
+    }
+
+    // Calcular la longitud real del path
+    const length = this.linePath.getTotalLength();
+    
+    // Aplicar valores correctos
+    this.linePath.style.strokeDasharray = length;
+    this.linePath.style.strokeDashoffset = length;
+
+    // Opción 1: Animar cuando entra en viewport (IntersectionObserver)
+    this.observeLineElement();
+
+    // Opción 2: Mostrar animación inmediatamente
+    // this.triggerLineAnimation();
+  }
+
+  /**
+   * Observador de intersección - anima cuando el elemento es visible
+   */
+  observeLineElement() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.triggerLineAnimation();
+          // Solo animar una vez
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (this.lineContainer) {
+      observer.observe(this.lineContainer);
+    }
+  }
+
+  /**
+   * Activar la animación del path
+   */
+  triggerLineAnimation() {
+    if (!this.linePath) return;
+
+    const length = this.linePath.getTotalLength();
+
+    // Reset a posición inicial
+    this.linePath.style.strokeDasharray = length;
+    this.linePath.style.strokeDashoffset = length;
+
+    // Pequeño delay y luego animar
+    setTimeout(() => {
+      this.linePath.style.transition = 'stroke-dashoffset 4s ease-in-out';
+      this.linePath.style.strokeDashoffset = 0;
+    }, 100);
+  }
+
+  /**
+   * Pausar la animación
+   */
+  pauseAnimation() {
+    if (this.linePath) {
+      this.linePath.style.animationPlayState = 'paused';
+    }
+  }
+
+  /**
+   * Reanudar la animación
+   */
+  resumeAnimation() {
+    if (this.linePath) {
+      this.linePath.style.animationPlayState = 'running';
+    }
+  }
+
+  /**
+   * Resetear a estado inicial
+   */
+  resetAnimation() {
+    if (!this.linePath) return;
+
+    const length = this.linePath.getTotalLength();
+    this.linePath.style.transition = 'none';
+    this.linePath.style.strokeDashoffset = length;
+
+    // Trigger reflow
+    void this.linePath.offsetHeight;
+
+    // Volver a animar
+    this.linePath.style.transition = 'stroke-dashoffset 4s ease-in-out';
+    this.linePath.style.strokeDashoffset = 0;
+  }
+
+  /**
+   * Cambiar la velocidad de la animación
+   */
+  setAnimationSpeed(seconds) {
+    if (this.linePath) {
+      this.linePath.style.animationDuration = `${seconds}s`;
+    }
+  }
+
+  /**
+   * Cambiar el color de la línea
+   */
+  setLineColor(color) {
+    if (this.linePath) {
+      this.linePath.setAttribute('stroke', color);
+    }
+  }
+
+  /**
+   * Obtener información del path
+   */
+  getPathInfo() {
+    if (!this.linePath) return null;
+
+    return {
+      length: this.linePath.getTotalLength(),
+      bbox: this.linePath.getBBox(),
+      tagName: this.linePath.tagName,
+      stroke: this.linePath.getAttribute('stroke'),
+      strokeWidth: this.linePath.getAttribute('stroke-width')
+    };
+  }
+
+  /**
+   * Animar en scroll (alternativa)
+   */
+  enableScrollAnimation() {
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          this.updateLineByScroll();
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
-  });
+  }
+
+  /**
+   * Actualizar progreso de línea según scroll
+   */
+  updateLineByScroll() {
+    if (!this.lineContainer || !this.linePath) return;
+
+    const rect = this.lineContainer.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    // Calcular progreso (0 a 1)
+    const progress = 1 - (rect.top / (windowHeight + rect.height));
+    const clampedProgress = Math.max(0, Math.min(1, progress));
+
+    const length = this.linePath.getTotalLength();
+    this.linePath.style.strokeDashoffset = length * (1 - clampedProgress);
+    this.linePath.style.transition = 'none';
+  }
 }
+
+// Inicializar cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  window.manifestoAnimations = new ManifestoLineAnimations();
+});
+
+/**
+ * EJEMPLOS DE USO
+ * 
+ * Desde la consola del navegador:
+ * 
+ * // Resetear la animación
+ * window.manifestoAnimations.resetAnimation();
+ * 
+ * // Cambiar velocidad (3 segundos)
+ * window.manifestoAnimations.setAnimationSpeed(3);
+ * 
+ * // Cambiar color
+ * window.manifestoAnimations.setLineColor('#FF5416');
+ * 
+ * // Obtener info del path
+ * console.log(window.manifestoAnimations.getPathInfo());
+ * 
+ * // Pausar/Reanudar
+ * window.manifestoAnimations.pauseAnimation();
+ * window.manifestoAnimations.resumeAnimation();
+ * 
+ * // Activar animación por scroll
+ * window.manifestoAnimations.enableScrollAnimation();
+ */
 
 
 /* ═══════════════════════════════════════════

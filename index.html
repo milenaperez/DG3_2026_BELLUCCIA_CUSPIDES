@@ -80,8 +80,8 @@
             <span class="trustbar__suffix">+ Aventureros inscriptos</span>
           </div>
           <div class="trustbar__divider"></div>
-          <div class="trustbar__stat" data-count="15" data-suffix="+ Años">
-            <span class="trustbar__number" data-target="15">0</span>
+          <div class="trustbar__stat" data-count="25" data-suffix="+ Años">
+            <span class="trustbar__number" data-target="25">0</span>
             <span class="trustbar__suffix">+ Años guiando</span>
           </div>
           <div class="trustbar__divider"></div>
@@ -96,39 +96,59 @@
     <!-- ═══════════════════════════════════════════
          3. MANIFESTO SECTION
     ═══════════════════════════════════════════ -->
-    <section class="manifesto" id="manifiesto">
-      <div class="container">
-        <div class="manifesto__header reveal-up">
-          <p class="section-eyebrow">Por qué Cima Absoluta</p>
-          <h2 class="section-title">Tres principios que nunca<br />negociamos en la montaña</h2>
-        </div>
+ <section class="manifesto" id="manifiesto">
+      <div class="manifesto__bg">
+        <img src="assets/manifesto-img.png" alt="Fondo manifiesto" class="manifesto__bg-img" />
+        <div class="manifesto__overlay"></div>
+      </div>
 
-        <div class="manifesto__grid">
-          <div class="manifesto__card tilt-card reveal-up" data-delay="0">
-            <div class="manifesto__card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Seguridad Obsesiva</h3>
-            <p>Protocolos de evacuación de helicóptero en menos de 2 horas desde cualquier punto de la ruta. Comunicación satelital en cada expedición, sin excepción. La cumbre es opcional, regresar es obligatorio.</p>
-            <div class="manifesto__card-border"></div>
+      <div class="container manifesto__content">
+        <div class="manifesto__wrapper">
+          <!-- COLUMNA IZQUIERDA: TEXTO -->
+          <div class="manifesto__text reveal-up">
+            <p class="section-eyebrow">POR QUÉ CÚSPIDES</p>
+            <h2 class="section-title">EL FITZ ROY NO SE VISITA.<br />SE CONQUISTA POR DENTRO.</h2>
+            <p class="manifesto__description">Nuestras expediciones están pensadas para quienes buscan algo más que un paisaje: buscan el desafío de llegar más lejos.</p>
           </div>
 
-          <div class="manifesto__card tilt-card reveal-up" data-delay="150">
-            <div class="manifesto__card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Grupos Íntimos</h3>
-            <p>Máximo 6 personas por expedición. Sin masificación, sin que nadie se pierda en el grupo. Cada alpinista recibe atención personalizada del guía y un plan de entrenamiento previo específico.</p>
-            <div class="manifesto__card-border"></div>
-          </div>
+          <!-- COLUMNA DERECHA: BARRAS VERTICALES ANIMADAS -->
+          <div class="manifesto__bars">
+            <!-- LÍNEA ÚNICA QUE ATRAVIESA TODAS LAS BARRAS -->
+            <svg class="manifesto__line-container" viewBox="0 0 400 300" preserveAspectRatio="none">
+              <path class="manifesto__line-animate" 
+                    d="M 20 280 L 40 250 L 60 240 L 80 200 L 100 180 L 120 160 L 140 130 L 160 110 L 180 80 L 200 70 L 220 50 L 240 40 L 260 30 L 280 20 L 300 10 L 320 5 L 340 8 L 360 15 L 380 20" 
+                    stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
 
-          <div class="manifesto__card tilt-card reveal-up" data-delay="300">
-            <div class="manifesto__card-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            <!-- BARRA 1: SEGURIDAD OBSESIVA -->
+            <div class="manifesto__bar reveal-up" data-delay="0">
+              <div class="manifesto__bar-image">
+                <img src="assets/manifesto-bar-1.png" alt="Seguridad Obsesiva" />
+              </div>
+              <div class="manifesto__bar-label">
+                <h3>1.160 msnm</h3>
+              </div>
             </div>
-            <h3>Campo Base Premium</h3>
-            <p>Menús diseñados por chef de montaña para máximo rendimiento a altura: alta densidad calórica, digestibilidad óptima y temperatura. Porque rendir en la cima empieza por comer bien en el campo base.</p>
-            <div class="manifesto__card-border"></div>
+
+            <!-- BARRA 2: GRUPOS ÍNTIMOS -->
+            <div class="manifesto__bar reveal-up" data-delay="150">
+              <div class="manifesto__bar-image">
+                <img src="assets/manifesto-bar-2.png" alt="Grupos Íntimos" />
+              </div>
+              <div class="manifesto__bar-label">
+                <h3>2.257 msnm</h3>
+              </div>
+            </div>
+
+            <!-- BARRA 3: CAMPO BASE PREMIUM -->
+            <div class="manifesto__bar reveal-up" data-delay="300">
+              <div class="manifesto__bar-image">
+                <img src="assets/manifesto-bar-3.png" alt="Campo Base Premium" />
+              </div>
+              <div class="manifesto__bar-label">
+                <h3>3.405 msnm</h3>
+              </div>
+            </div>
           </div>
         </div>
       </div>
