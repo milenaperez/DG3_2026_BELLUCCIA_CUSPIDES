@@ -601,23 +601,77 @@ function initJourney() {
   const timeline = $('#journeyTimeline');
   const lineFill = $('#journeyLineFill');
   const steps = $$('.journey__step');
-  if (!timeline || !lineFill) return;
+  if (!timeline || !lineFill || steps.length === 0) return;
 
-  function update() {
+  let animationFrameId;
+  let isTimelineVisible = false;
+
+  // Observar si la timeline está visible en viewport
+  const timelineObserver = new IntersectionObserver(
+    (entries) => {
+      isTimelineVisible = entries[0].isIntersecting;
+      if (isTimelineVisible) {
+        updateProgress();
+      }
+    },
+    { threshold: 0 }
+  );
+
+  timelineObserver.observe(timeline);
+
+  // Calcular y animar el progreso
+  function updateProgress() {
+    cancelAnimationFrame(animationFrameId);
+    
     const rect = timeline.getBoundingClientRect();
     const viewH = window.innerHeight;
-    const progress = clamp((viewH - rect.top) / (rect.height + viewH * 0.5), 0, 1);
+    
+    // Calcular progreso (0 a 1)
+    const progress = clamp(
+      (viewH - rect.top) / (rect.height + viewH * 0.5),
+      0,
+      1
+    );
 
+    // Animar altura de línea de progreso
     lineFill.style.height = (progress * 100) + '%';
 
+    // Activar/desactivar pasos basado en progreso
     steps.forEach((step, i) => {
       const threshold = (i + 1) / steps.length;
-      step.classList.toggle('is-active', progress >= threshold - 0.15);
+      // Usar un threshold más generoso (0.15) para mejor UX
+      const isActive = progress >= (threshold - 0.15);
+      step.classList.toggle('is-active', isActive);
     });
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  // Listener de scroll optimizado
+  let scrollTimeout;
+  const handleScroll = () => {
+    if (!isTimelineVisible) return;
+    
+    clearTimeout(scrollTimeout);
+    updateProgress();
+    
+    // Debounce para evitar cálculos excesivos
+    scrollTimeout = setTimeout(() => {
+      updateProgress();
+    }, 50);
+  };
+
+  // Scroll listener pasivo para mejor rendimiento
+  window.addEventListener('scroll', handleScroll, { passive: true });
+
+  // Inicializar en la carga
+  updateProgress();
+
+  // Limpiar observers cuando sea necesario
+  return () => {
+    timelineObserver.disconnect();
+    window.removeEventListener('scroll', handleScroll);
+    clearTimeout(scrollTimeout);
+    cancelAnimationFrame(animationFrameId);
+  };
 }
 
 
@@ -888,37 +942,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function initCoursesCarousel() {
 
-  const track = document.getElementById("coursesTrack");
-  const prev = document.getElementById("coursesPrev");
-  const next = document.getElementById("coursesNext");
+    const track = document.getElementById("coursesTrack");
+    const prev = document.getElementById("coursesPrev");
+    const next = document.getElementById("coursesNext");
 
-  if (!track) return;
+    if (!track) return;
 
-  let index = 0;
-  const visible = 3;
-  const total = 6;
+    let index = 0;
 
-  function update() {
-    const cardWidth = track.children[0].offsetWidth + 30;
-    track.style.transform =
-      `translateX(-${index * cardWidth}px)`;
-  }
+    function getMoveDistance(){
 
-  next.addEventListener("click", () => {
-    if (index < total - visible) {
-      index++;
-      update();
+        const firstCard = track.querySelector(".course-card");
+
+        const gap = parseFloat(
+            getComputedStyle(track).columnGap ||
+            getComputedStyle(track).gap
+        );
+
+        return firstCard.getBoundingClientRect().width + gap;
     }
-  });
 
-  prev.addEventListener("click", () => {
-    if (index > 0) {
-      index--;
-      update();
+    function getVisibleCards(){
+        // Desktop: 3 cards
+        if (window.innerWidth > 1200) {
+            return 3;
+        }
+        // Tablet: 2 cards
+        else if (window.innerWidth > 768) {
+            return 2;
+        }
+        // Mobile: 1 card
+        else {
+            return 1;
+        }
     }
-  });
 
-  window.addEventListener("resize", update);
+    function getMaxIndex(){
+
+        return Math.max(
+            0,
+            track.children.length - getVisibleCards()
+        );
+    }
+
+    function update(){
+
+        track.style.transform =
+            `translateX(-${index * getMoveDistance()}px)`;
+
+        prev.disabled = index === 0;
+        next.disabled = index >= getMaxIndex();
+    }
+
+    next.addEventListener("click", () => {
+
+        if(index < getMaxIndex()){
+
+            index++;
+
+            update();
+        }
+
+    });
+
+    prev.addEventListener("click", () => {
+
+        if(index > 0){
+
+            index--;
+
+            update();
+        }
+
+    });
+
+    // Actualizar al cambiar tamaño de ventana
+    window.addEventListener("resize", () => {
+        const maxIndex = getMaxIndex();
+        if (index > maxIndex) {
+            index = maxIndex;
+        }
+        update();
+    });
+
+    update();
+
+    window.addEventListener("resize", update);
+
+    update();
+
 }
 
 document.addEventListener("DOMContentLoaded", () => {

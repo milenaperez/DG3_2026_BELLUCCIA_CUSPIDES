@@ -13,15 +13,7 @@
 <body>
 
   <!-- ALTIMETER: Signature element — scroll progress bar -->
-  <div class="altimeter" aria-hidden="true">
-    <div class="altimeter__track">
-      <div class="altimeter__fill" id="altimeterFill"></div>
-      <div class="altimeter__marker" id="altimeterMarker">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 22 20 2 20"/></svg>
-      </div>
-    </div>
-    <span class="altimeter__label">6.961m</span>
-  </div>
+
 
   <!-- NAV -->
   <nav class="nav" id="mainNav">
@@ -29,8 +21,8 @@
     <ul class="nav__links">
       <li><a href="#proceso">Entrenamiento</a></li>
       <li><a href="#expediciones">Expediciones</a></li>
-      <li><a href="#guias">Equipamiento</a></li>
-      <li><a href="#faq">Nosotros</a></li>
+      <li><a href="#gallery">Aventureros</a></li>
+      <li><a href="#guias">Guías</a></li>
     </ul>
     <a href="#flagship" class="btn btn--reservar">Reservar</a>
     <button class="nav__burger" id="navBurger" aria-label="Menú">
@@ -41,8 +33,8 @@
   <div class="nav__mobile" id="navMobile">
     <a href="#proceso">Entrenamiento</a>
     <a href="#expediciones">Expediciones</a>
-    <a href="#guias">Equipamiento</a>
-    <a href="#faq">Nosotros</a>
+    <a href="#gallery">Aventureros</a>
+    <a href="#guias">Guías</a>
     <a href="#flagship" class="btn btn--reservar">Reservar</a>
   </div>
 
@@ -107,7 +99,7 @@
           <!-- COLUMNA IZQUIERDA: TEXTO -->
           <div class="manifesto__text reveal-up">
             <p class="section-eyebrow">EL TRAYECTO</p>
-            <h2 class="section-title">EL FITZ ROY NO SE VISITA.<br />SE CONQUISTA POR DENTRO.</h2>
+            <h2 class="section-title">EL FITZ ROY NO SE VISITA. SE CONQUISTA POR DENTRO.</h2>
             <p class="manifesto__description">Nuestras expediciones están pensadas para quienes buscan algo más que un paisaje: buscan el desafío de llegar más lejos.</p>
           </div>
 
@@ -160,110 +152,6 @@
         </svg>
       </div>
     </section>
-
-    <!-- ═══════════════════════════════════════════
-         4. CURSOS
-    ═══════════════════════════════════════════ -->
-
-<section class="courses" id="cursos">
-
-  <div class="courses__bg">
-    <img src="assets/cursos-img.png" alt="" class="courses__bg-img">
-    <div class="courses__overlay"></div>
-  </div>
-
-  <div class="container">
-
-    <div class="courses__header">
-      <p class="section-eyebrow">EXPEDICIONES</p>
-      <h2 class="courses__title">TU PRÓXIMO RETO</h2>
-    </div>
-
-    <button class="courses__nav courses__nav--prev" id="coursesPrev">
-      ‹
-    </button>
-
-    <div class="courses__viewport">
-      <div class="courses__track" id="coursesTrack">
-
-        <!-- CARD 1 -->
-        <article class="course-card">
-          <div class="course-card__image">
-            <!-- PLACEHOLDER -->
-          </div>
-
-          <div class="course-card__body">
-            <span class="course-card__level advanced">AVANZADO</span>
-
-            <h3>CURSO 1</h3>
-            <p>Ubicación</p>
-
-            <div class="course-card__info">
-              <strong>Preparación previa:</strong> X meses<br>
-              <strong>Duración:</strong> X días
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 2 -->
-        <article class="course-card featured">
-          <div class="course-card__image"></div>
-
-          <div class="course-card__body">
-            <span class="course-card__level expert">EXPERTO</span>
-
-            <h3>CURSO 2</h3>
-            <p>Ubicación</p>
-
-            <div class="course-card__info">
-              <strong>Preparación previa:</strong> X meses<br>
-              <strong>Duración:</strong> X días
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 3 -->
-        <article class="course-card">
-          <div class="course-card__image"></div>
-
-          <div class="course-card__body">
-            <span class="course-card__level intermediate">INTERMEDIO</span>
-
-            <h3>CURSO 3</h3>
-            <p>Ubicación</p>
-
-            <div class="course-card__info">
-              <strong>Preparación previa:</strong> X meses<br>
-              <strong>Duración:</strong> X días
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD 4 -->
-        <article class="course-card">
-          <div class="course-card__image"></div>
-        </article>
-
-        <!-- CARD 5 -->
-        <article class="course-card">
-          <div class="course-card__image"></div>
-        </article>
-
-        <!-- CARD 6 -->
-        <article class="course-card">
-          <div class="course-card__image"></div>
-        </article>
-
-      </div>
-    </div>
-
-    <button class="courses__nav courses__nav--next" id="coursesNext">
-      ›
-    </button>
-
-  </div>
-
-</section>
 
     <!-- ═══════════════════════════════════════════
          6. JOURNEY TIMELINE
@@ -321,6 +209,196 @@
     </section>
 
     <!-- ═══════════════════════════════════════════
+         4. CURSOS
+    ═══════════════════════════════════════════ -->
+
+<section class="courses" id="cursos">
+
+  <div class="courses__bg">
+    <img src="assets/cursos-img.png" alt="" class="courses__bg-img">
+    <div class="courses__overlay"></div>
+  </div>
+
+  <div class="container">
+
+    <div class="courses__header">
+      <p class="section-eyebrow">EXPEDICIONES</p>
+      <h2 class="courses__title">TU PRÓXIMO RETO</h2>
+    </div>
+
+    <div class="courses__wrapper">
+      <button class="courses__nav courses__nav--prev" id="coursesPrev" aria-label="Anterior">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="courses__viewport">
+        <div class="courses__track" id="coursesTrack">
+
+          <!-- CARD 1 -->
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="assets/cerro-electrico.png" alt="Cerro Eléctrico">
+            </div>
+
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level advanced">AVANZADO</span>
+
+                <h3>CERRO ELÉCTRICO</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 2-3 meses<br>
+                  <strong>Altura máxima:</strong> 2.257 msnm<br>
+                  <strong>Duración:</strong> 5-7 días<br>
+                  <strong>Época:</strong> Noviembre- Marzo
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>
+          </article>
+
+          <!-- CARD 2 -->
+          <article class="course-card featured">
+            <div class="course-card__image">
+              <img src="assets/fitz-roy.png" alt="Monte Fitz Roy">
+            </div>
+            
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level expert">EXPERTO</span>
+
+                <h3>MONTE FITZ ROY</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 4-6 meses<br>
+                  <strong>Altura máxima:</strong> 3.405 msnm<br>
+                  <strong>Duración:</strong> 7-12 días<br>
+                  <strong>Época:</strong> Diciembre- Febrero
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>
+          </article>
+
+          <!-- CARD 3 -->
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="assets/laguna-tres.png" alt="Laguna de los 3">
+            </div>
+
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level intermediate">INTERMEDIO</span>
+
+                <h3>LAGUNA DE LOS 3</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 1-2 meses<br>
+                  <strong>Altura máxima:</strong> 1.160 msnm<br>
+                  <strong>Duración:</strong> 2 días<br>
+                  <strong>Época:</strong> Diciembre- Marzo
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>
+          </article>
+
+          <!-- CARD 4 -->
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="assets/cerro-electrico2.png" alt="Cerro Eléctrico - Nocturno">
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level advanced">AVANZADO</span>
+
+                <h3>CERRO ELÉCTRICO - NOCTURNO</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 2-3 meses<br>
+                  <strong>Altura máxima:</strong> 2.257 msnm<br>
+                  <strong>Duración:</strong> 5-7 días<br>
+                  <strong>Época:</strong> Noviembre- Marzo
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>          
+          </article>
+
+          <!-- CARD 5 -->
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="assets/fitz-roy2.png" alt="Monte Fitz Roy - Nocturno">
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level expert">EXPERTO</span>
+
+                <h3>MONTE FITZ ROY - NOCTURNO</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 4-6 meses<br>
+                  <strong>Altura máxima:</strong> 3.405 msnm<br>
+                  <strong>Duración:</strong> 7-12 días<br>
+                  <strong>Época:</strong> Diciembre- Febrero
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>          
+          </article>
+
+          <!-- CARD 6 -->
+          <article class="course-card">
+            <div class="course-card__image">
+              <img src="assets/laguna-tres2.png" alt="Laguna de los 3 - Nocturno">
+            </div>
+            <div class="course-card__body">
+              <div class="course-card__content">
+                <span class="course-card__level intermediate">INTERMEDIO</span>
+
+                <h3>LAGUNA DE LOS 3 - NOCTURNO</h3>
+                <p>El Chaltén · Santa Cruz</p>
+
+                <div class="course-card__info">
+                  <strong>Preparación previa:</strong> 1-2 meses<br>
+                  <strong>Altura máxima:</strong> 1.160 msnm<br>
+                  <strong>Duración:</strong> 2 días<br>
+                  <strong>Época:</strong> Diciembre- Marzo
+                </div>
+              </div>
+
+              <a href="#" class="btn btn--more-info">MÁS INFO</a>
+            </div>         
+          </article>
+
+        </div>
+      </div>
+
+      <button class="courses__nav courses__nav--next" id="coursesNext" aria-label="Siguiente">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+  </div>
+
+</section>
+
+
+    <!-- ═══════════════════════════════════════════
          7. GALLERY DESTINATIONS
     ═══════════════════════════════════════════ -->
     <section class="gallery" id="gallery">
@@ -335,17 +413,19 @@
           <!-- FEATURED CARD (MAIN) -->
           <div class="gallery__item gallery__item--featured">
             <div class="gallery__media">
-              <video 
-                class="gallery__video" 
-                autoplay 
-                muted 
-                loop 
-                playsinline>
-                <source src="https://commondatastorage.googleapis.com/gtv-videos-library/sample/BigBuckBunny.mp4" type="video/mp4">
+              <video
+                class="gallery__video"
+                autoplay
+                muted
+                loop
+                playsinline
+                preload="metadata"
+              >
+                <source src="assets/gallery-video.mp4" type="video/mp4">
               </video>
               <div class="gallery__overlay"></div>
             </div>
-            <div class="gallery__content">
+                        <div class="gallery__content">
               <p class="gallery__label">Experiencia</p>
               <h3 class="gallery__title">Hiking Adventures in Iceland</h3>
               <p class="gallery__subtitle">50 ADVENTURES</p>
