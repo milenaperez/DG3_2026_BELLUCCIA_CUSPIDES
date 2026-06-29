@@ -319,9 +319,117 @@ class ManifestoLineAnimations {
   }
 }
 
+/**
+ * USA RIDGELINE ANIMATIONS
+ * Animaciones para el SVG de ridgeline al final de la sección manifesto
+ */
+
+class USARidgelineAnimations {
+  constructor() {
+    this.svgContainer = document.querySelector('.pre-footer-svg');
+    this.ridgelinePath = document.querySelector('.ridgeline-path');
+    this.init();
+  }
+
+  init() {
+    if (!this.ridgelinePath) {
+      console.warn('No SVG ridgeline path found');
+      return;
+    }
+
+    // Calcular la longitud real del path
+    const length = this.ridgelinePath.getTotalLength();
+    
+    // Aplicar valores iniciales
+    this.ridgelinePath.style.strokeDasharray = length;
+    this.ridgelinePath.style.strokeDashoffset = length;
+
+    // Observar cuando entra en viewport
+    this.observeRidgelineElement();
+  }
+
+  /**
+   * Observador de intersección - anima cuando el elemento es visible
+   */
+  observeRidgelineElement() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.triggerRidgelineAnimation();
+          // Solo animar una vez
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.2 });
+
+    if (this.svgContainer) {
+      observer.observe(this.svgContainer);
+    }
+  }
+
+  /**
+   * Activar la animación del ridgeline
+   */
+  triggerRidgelineAnimation() {
+    if (!this.ridgelinePath) return;
+
+    const length = this.ridgelinePath.getTotalLength();
+
+    // Reset a posición inicial
+    this.ridgelinePath.style.strokeDasharray = length;
+    this.ridgelinePath.style.strokeDashoffset = length;
+
+    // Pequeño delay y luego animar
+    setTimeout(() => {
+      this.ridgelinePath.style.transition = 'stroke-dashoffset 4s ease-out';
+      this.ridgelinePath.style.strokeDashoffset = 0;
+      this.ridgelinePath.classList.add('is-animating');
+    }, 100);
+  }
+
+  /**
+   * Pausar la animación
+   */
+  pauseAnimation() {
+    if (this.ridgelinePath) {
+      this.ridgelinePath.style.animationPlayState = 'paused';
+    }
+  }
+
+  /**
+   * Reanudar la animación
+   */
+  resumeAnimation() {
+    if (this.ridgelinePath) {
+      this.ridgelinePath.style.animationPlayState = 'running';
+    }
+  }
+
+  /**
+   * Resetear a estado inicial
+   */
+  resetAnimation() {
+    if (!this.ridgelinePath) return;
+
+    const length = this.ridgelinePath.getTotalLength();
+    this.ridgelinePath.style.transition = 'none';
+    this.ridgelinePath.style.strokeDashoffset = length;
+    this.ridgelinePath.classList.remove('is-animating');
+
+    // Trigger reflow
+    void this.ridgelinePath.offsetHeight;
+
+    // Volver a animar
+    this.ridgelinePath.style.transition = 'stroke-dashoffset 4s ease-out';
+    this.ridgelinePath.style.strokeDashoffset = 0;
+    this.ridgelinePath.classList.add('is-animating');
+  }
+}
+
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
   window.manifestoAnimations = new ManifestoLineAnimations();
+  window.usaRidgelineAnimations = new USARidgelineAnimations();
 });
 
 /**
@@ -588,50 +696,58 @@ function initLevelTest() {
 ═══════════════════════════════════════════ */
 
 function initTestimonials() {
+  const carousel = $('#testimonialsCarousel');
   const track = $('#testimonialsTrack');
-  const dotsContainer = $('#carouselDots');
   const prevBtn = $('#testimonialPrev');
   const nextBtn = $('#testimonialNext');
-  if (!track) return;
+  
+  if (!carousel || !track) return;
 
-  const cards = $$('.testimonial-card', track);
+  const cards = $$('.testimonials__card', track);
+  const cardWidth = 100 / 3; // 3 cards visible
   let current = 0;
-  let startX = 0;
-  let isDragging = false;
+  let isScrolling = false;
 
-  // Create dots
-  cards.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'carousel-dot';
-    dot.setAttribute('aria-label', `Testimonio ${i + 1}`);
-    if (i === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => goTo(i));
-    dotsContainer.appendChild(dot);
-  });
-
-  function goTo(index) {
-    current = clamp(index, 0, cards.length - 1);
-    const offset = current * 100;
+  function updateCarousel() {
+    const offset = current * (100 / 3);
     track.style.transform = `translateX(-${offset}%)`;
-
-    $$('.carousel-dot', dotsContainer).forEach((dot, i) => {
-      dot.classList.toggle('active', i === current);
-    });
-
+    
+    // Update button states
     prevBtn.disabled = current === 0;
-    nextBtn.disabled = current === cards.length - 1;
+    nextBtn.disabled = current >= cards.length - 3;
   }
 
+  function goTo(index) {
+    current = clamp(index, 0, Math.max(0, cards.length - 3));
+    updateCarousel();
+  }
+
+  // Button navigation
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
 
-  // Touch swipe
-  track.addEventListener('touchstart', e => {
+  // Mouse wheel scroll - ONLY on testimonials section
+  carousel.addEventListener('wheel', (e) => {
+    e.preventDefault();
+    
+    // Translate vertical wheel movement to horizontal carousel movement
+    if (e.deltaY > 0) {
+      goTo(current + 1); // Scroll down = next
+    } else if (e.deltaY < 0) {
+      goTo(current - 1); // Scroll up = prev
+    }
+  }, { passive: false });
+
+  // Touch swipe for mobile
+  let startX = 0;
+  let isDragging = false;
+
+  carousel.addEventListener('touchstart', (e) => {
     startX = e.touches[0].clientX;
     isDragging = true;
   }, { passive: true });
 
-  track.addEventListener('touchend', e => {
+  carousel.addEventListener('touchend', (e) => {
     if (!isDragging) return;
     const diff = startX - e.changedTouches[0].clientX;
     if (Math.abs(diff) > 50) {
@@ -640,19 +756,8 @@ function initTestimonials() {
     isDragging = false;
   });
 
-  goTo(0);
-
-  // Auto-advance
-  let autoTimer = setInterval(() => {
-    goTo(current < cards.length - 1 ? current + 1 : 0);
-  }, 5000);
-
-  track.closest('.testimonials__carousel').addEventListener('mouseenter', () => clearInterval(autoTimer));
-  track.closest('.testimonials__carousel').addEventListener('mouseleave', () => {
-    autoTimer = setInterval(() => {
-      goTo(current < cards.length - 1 ? current + 1 : 0);
-    }, 5000);
-  });
+  // Initialize
+  updateCarousel();
 }
 
 
