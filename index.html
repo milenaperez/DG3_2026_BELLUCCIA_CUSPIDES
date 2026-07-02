@@ -20,8 +20,8 @@
     <a href="#" class="nav__logo">CÚSPIDES</a>
     <ul class="nav__links">
       <li><a href="#proceso">Entrenamiento</a></li>
-      <li><a href="#expediciones">Expediciones</a></li>
-      <li><a href="#gallery">Aventureros</a></li>
+      <li><a href="#cursos">Expediciones</a></li>
+      <li><a href="#testimonials">Aventureros</a></li>
       <li><a href="#guias">Guías</a></li>
     </ul>
     <a href="#flagship" class="btn btn--reservar">Reservar</a>
@@ -32,8 +32,8 @@
 
   <div class="nav__mobile" id="navMobile">
     <a href="#proceso">Entrenamiento</a>
-    <a href="#expediciones">Expediciones</a>
-    <a href="#gallery">Aventureros</a>
+    <a href="#cursos">Expediciones</a>
+    <a href="#testimonials">Aventureros</a>
     <a href="#guias">Guías</a>
     <a href="#flagship" class="btn btn--reservar">Reservar</a>
   </div>
@@ -61,23 +61,23 @@
     ═══════════════════════════════════════════ -->
     <section class="trustbar" id="trustbar">
       <div class="container">
-        <div class="trustbar__grid">
-          <div class="trustbar__stat" data-count="220" data-suffix="+ Años">
+        <div class="trustbar__grid reveal-group">
+          <div class="trustbar__stat reveal-up" data-count="220" data-suffix="+ Años">
             <span class="trustbar__number" data-target="220">0</span>
-            <span class="trustbar__suffix">Cumbres alcanzadas</span>
+            <span class="trustbar__suffix">Cumbres logradas</span>
           </div>
           <div class="trustbar__divider"></div>
-          <div class="trustbar__stat" data-count="1250" data-suffix="+ Años">
+          <div class="trustbar__stat reveal-up" data-count="1250" data-suffix="+ Años">
             <span class="trustbar__number" data-target="1250">0</span>
             <span class="trustbar__suffix">Personas inscriptas</span>
           </div>
           <div class="trustbar__divider"></div>
-          <div class="trustbar__stat" data-count="25" data-suffix="+ Años">
+          <div class="trustbar__stat reveal-up" data-count="25" data-suffix="+ Años">
             <span class="trustbar__number" data-target="25">0</span>
             <span class="trustbar__suffix">Años guiando</span>
           </div>
           <div class="trustbar__divider"></div>
-          <div class="trustbar__stat" data-count="30" data-suffix="+ Años">
+          <div class="trustbar__stat reveal-up" data-count="30" data-suffix="+ Años">
             <span class="trustbar__number" data-target="30">0</span>
             <span class="trustbar__suffix">Guías certificados</span>
           </div>
@@ -99,19 +99,12 @@
           <!-- COLUMNA IZQUIERDA: TEXTO -->
           <div class="manifesto__text reveal-up">
             <p class="section-eyebrow">EL TRAYECTO</p>
-            <h2 class="section-title">EL FITZ ROY NO SE VISITA. SE CONQUISTA POR DENTRO.</h2>
+            <h2 class="section-title">EL FITZ ROY NO SE VISITA. <br> SE CONQUISTA POR DENTRO.</h2>
             <p class="manifesto__description">Nuestras expediciones están pensadas para quienes buscan algo más que un paisaje: buscan el desafío de llegar más lejos.</p>
           </div>
 
           <!-- COLUMNA DERECHA: BARRAS VERTICALES ANIMADAS -->
           <div class="manifesto__bars">
-            <!-- LÍNEA ÚNICA QUE ATRAVIESA TODAS LAS BARRAS -->
-            <svg class="manifesto__line-container" viewBox="0 0 400 300" preserveAspectRatio="none">
-              <path class="manifesto__line-animate" 
-                    d="M 20 280 L 40 250 L 60 240 L 80 200 L 100 180 L 120 160 L 140 130 L 160 110 L 180 80 L 200 70 L 220 50 L 240 40 L 260 30 L 280 20 L 300 10 L 320 5 L 340 8 L 360 15 L 380 20" 
-                    stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-
             <!-- BARRA 1: SEGURIDAD OBSESIVA -->
             <div class="manifesto__bar reveal-up" data-delay="0">
               <div class="manifesto__bar-image">
@@ -156,27 +149,6 @@
     <!-- ═══════════════════════════════════════════
          6. JOURNEY TIMELINE
     ═══════════════════════════════════════════ -->
-<div class="slider-home">
-        <div class="slide-track">
-            <div class="slide-home"><span>adrenalina</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>superación</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>resistencia</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>exploración</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-
-            <div class="slide-home"><span>adrenalina</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>superación</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>resistencia</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-            <div class="slide-home"><span>exploración</span></div>
-            <div class="slide-home"><span class="separator">·</span></div>
-        </div>
-    </div>
 
     <section class="journey" id="proceso">
       <div class="container">
@@ -242,12 +214,12 @@
 
   <div class="container">
 
-    <div class="courses__header">
+    <div class="courses__header reveal-up">
       <p class="section-eyebrow">NUESTRAS EXPEDICIONES</p>
       <h2 class="courses__title">TU PRÓXIMO RETO</h2>
     </div>
 
-    <div class="courses__wrapper">
+    <div class="courses__wrapper reveal-up" data-delay="100">
       <button class="courses__nav courses__nav--prev" id="coursesPrev" aria-label="Anterior">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <polyline points="15 18 9 12 15 6"></polyline>
@@ -341,7 +313,7 @@
               <div class="course-card__content">
                 <span class="course-card__level advanced">AVANZADO</span>
 
-                <h3>CERRO ELÉCTRICO - NOCTURNO</h3>
+                <h3>CERRO ELÉCTRICO</h3>
                 <p>El Chaltén · Santa Cruz</p>
 
                 <div class="course-card__info">
@@ -365,7 +337,7 @@
               <div class="course-card__content">
                 <span class="course-card__level expert">EXPERTO</span>
 
-                <h3>MONTE FITZ ROY - NOCTURNO</h3>
+                <h3>MONTE FITZ ROY</h3>
                 <p>El Chaltén · Santa Cruz</p>
 
                 <div class="course-card__info">
@@ -389,7 +361,7 @@
               <div class="course-card__content">
                 <span class="course-card__level intermediate">INTERMEDIO</span>
 
-                <h3>LAGUNA DE LOS 3 - NOCTURNO</h3>
+                <h3>LAGUNA DE LOS 3</h3>
                 <p>El Chaltén · Santa Cruz</p>
 
                 <div class="course-card__info">
@@ -422,6 +394,28 @@
     <!-- ═══════════════════════════════════════════
          7. GALLERY DESTINATIONS
     ═══════════════════════════════════════════ -->
+<div class="slider-home">
+        <div class="slide-track">
+            <div class="slide-home"><span>adrenalina</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>superación</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>resistencia</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>exploración</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+
+            <div class="slide-home"><span>adrenalina</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>superación</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>resistencia</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+            <div class="slide-home"><span>exploración</span></div>
+            <div class="slide-home"><span class="separator">·</span></div>
+        </div>
+    </div>
+
     <section class="gallery" id="gallery">
       <div class="container">
         <div class="gallery__header reveal-up">
@@ -530,7 +524,7 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop" alt="Nicolás Herrera" class="testimonials__avatar" />
+                    <img src="assets/nicolas-herrera.jpeg" alt="Nicolás Herrera" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
                       <h3 class="testimonials__author-name">Nicolás Herrera</h3>
                       <p class="testimonials__author-location">Buenos Aires, Argentina</p>
@@ -545,7 +539,7 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop" alt="Sofía Martínez" class="testimonials__avatar" />
+                    <img src="assets/sofia-martinez.png" alt="Sofía Martínez" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
                       <h3 class="testimonials__author-name">Sofía Martínez</h3>
                       <p class="testimonials__author-location">Córdoba, Argentina</p>
@@ -560,7 +554,7 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=60&h=60&fit=crop" alt="Matías Arancibia" class="testimonials__avatar" />
+                    <img src="assets/matias-arancibia.jpeg" alt="Matías Arancibia" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
                       <h3 class="testimonials__author-name">Matías Arancibia</h3>
                       <p class="testimonials__author-location">Puerto Varas, Chile</p>
@@ -575,7 +569,7 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&h=60&fit=crop" alt="Lucía Marchetti" class="testimonials__avatar" />
+                    <img src="assets/lucia-marchetti.jpeg" alt="Lucía Marchetti" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
                       <h3 class="testimonials__author-name">Lucía Marchetti</h3>
                       <p class="testimonials__author-location">La Plata, Argentina</p>
@@ -590,9 +584,9 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=60&h=60&fit=crop" alt="Dr. Tomás Reyes" class="testimonials__avatar" />
+                    <img src="assets/tomas-reyes.jpeg" alt="Dr. Tomás Reyes" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
-                      <h3 class="testimonials__author-name">Dr. Tomás Reyes</h3>
+                      <h3 class="testimonials__author-name">Tomás Reyes</h3>
                       <p class="testimonials__author-location">Santiago, Chile</p>
                     </div>
                   </div>
@@ -605,7 +599,7 @@
               <div class="testimonials__card">
                 <div class="testimonials__card-inner">
                   <div class="testimonials__author-info">
-                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=60&h=60&fit=crop" alt="Roberto Paravano" class="testimonials__avatar" />
+                    <img src="assets/roberto-paravano.jpeg" alt="Roberto Paravano" class="testimonials__avatar" />
                     <div class="testimonials__author-details">
                       <h3 class="testimonials__author-name">Roberto Paravano</h3>
                       <p class="testimonials__author-location">Mendoza, Argentina</p>
@@ -644,12 +638,12 @@
             <div class="guide-card__inner">
               <div class="guide-card__front">
                 <div class="guide-card__img-wrap">
-                  <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Guía Marcos Vidal" />
+                  <img src="assets/guia-marcos.png" alt="Guía Marcos Vidal" />
                 </div>
                 <div class="guide-card__info">
-                  <div class="guide-card__badge">UIAGM</div>
+                  <div class="guide-card__badge"> CERTIFICACIÓn ISAGM</div>
                   <h3>Marcos Vidal</h3>
-                  <p class="guide-card__role">Guía Principal · 22 años en montaña</p>
+                  <p class="guide-card__role">Guía Principal · 15 años en montaña</p>
                   <p class="guide-card__peak">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
                     Cumbre favorita: Ojos del Salado
@@ -657,7 +651,7 @@
                 </div>
               </div>
               <div class="guide-card__back">
-                <div class="guide-card__badge">UIAGM</div>
+                <div class="guide-card__badge">ISAGM</div>
                 <blockquote>"La montaña no se conquista con piernas, se conquista con la decisión de estar completamente presente."</blockquote>
                 <p class="guide-card__back-name">— Marcos Vidal</p>
                 <p class="guide-card__back-stats">127 cumbres × 14 expediciones guiadas</p>
@@ -669,11 +663,11 @@
             <div class="guide-card__inner">
               <div class="guide-card__front">
                 <div class="guide-card__img-wrap">
-                  <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Guía Sofía Ramos" />
+                  <img src="assets/valeria-doctora.png" alt="Guía Sofía Ramos" />
                 </div>
                 <div class="guide-card__info">
-                  <div class="guide-card__badge">UIAGM</div>
-                  <h3>Sofía Ramos</h3>
+                  <div class="guide-card__badge">ISAGM</div>
+                  <h3>Valeria Ramos</h3>
                   <p class="guide-card__role">Médica de Altura & Guía · 15 años</p>
                   <p class="guide-card__peak">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
@@ -682,9 +676,9 @@
                 </div>
               </div>
               <div class="guide-card__back">
-                <div class="guide-card__badge">UIAGM</div>
+                <div class="guide-card__badge">ISAGM</div>
                 <blockquote>"El cuerpo sabe más de lo que la mente le deja decir. En la altura, aprender a escucharlo es la diferencia entre la cumbre y el regreso."</blockquote>
-                <p class="guide-card__back-name">— Sofía Ramos</p>
+                <p class="guide-card__back-name">— Valeria Ramos</p>
                 <p class="guide-card__back-stats">Médica de urgencias · 89 cumbres</p>
               </div>
             </div>
@@ -694,12 +688,12 @@
             <div class="guide-card__inner">
               <div class="guide-card__front">
                 <div class="guide-card__img-wrap">
-                  <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Guía Esteban Iriarte" />
+                  <img src="assets/esteban-comunicacion.png" alt="Guía Esteban Iriarte" />
                 </div>
                 <div class="guide-card__info">
-                  <div class="guide-card__badge">UIAGM</div>
+                  <div class="guide-card__badge">ISAGM</div>
                   <h3>Esteban Iriarte</h3>
-                  <p class="guide-card__role">Especialista Himalaya · 18 años</p>
+                  <p class="guide-card__role">Lider de comunicacion & Guía · 18 años</p>
                   <p class="guide-card__peak">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 20 2 20"/></svg>
                     Cumbre favorita: Mera Peak, Nepal
@@ -707,7 +701,7 @@
                 </div>
               </div>
               <div class="guide-card__back">
-                <div class="guide-card__badge">UIAGM</div>
+                <div class="guide-card__badge">ISAGM</div>
                 <blockquote>"La cumbre no es el destino, es el lugar donde te das permiso de creer que eres capaz de todo lo que siempre quisiste."</blockquote>
                 <p class="guide-card__back-name">— Esteban Iriarte</p>
                 <p class="guide-card__back-stats">Matterhorn · Elbrus · Mera Peak</p>
@@ -716,6 +710,16 @@
           </div>
 
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════
+         9b. GUIDES SCHOOL BANNER
+    ═══════════════════════════════════════════ -->
+    <section class="guides-school-banner">
+      <div class="banner__content reveal-up">
+        <h2 class="banner__title">ESCUELA DE GUÍAS 2027</h2>
+        <p class="banner__subtitle">Próximamente</p>
       </div>
     </section>
 
@@ -786,28 +790,56 @@
     <!-- ═══════════════════════════════════════════
          10b. LEAD MAGNET
     ═══════════════════════════════════════════ -->
-    <section class="leadmagnet" id="leadmagnet">
-      <div class="container">
-        <div class="leadmagnet__inner reveal-up">
-          <div class="leadmagnet__icon">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#FF5416" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-          </div>
-          <div class="leadmagnet__text">
-            <p class="section-eyebrow">Descarga gratuita</p>
-            <h2>El Checklist definitivo de<br />equipamiento para Alta Montaña</h2>
-            <p>47 ítems organizados por categoría, con marcas recomendadas y presupuesto orientativo. El PDF que necesitas antes de tu primera expedición.</p>
-          </div>
-          <form class="leadmagnet__form" id="leadmagnetForm">
-            <input type="email" class="leadmagnet__input" placeholder="tu@email.com" required />
-            <button type="submit" class="btn btn--accent btn--lg">
-              Descargar gratis
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            </button>
-          </form>
-          <p class="leadmagnet__disclaimer">Sin spam. Baja en menos de 30 segundos.</p>
+<section class="leadmagnet" id="leadmagnet">
+  <div class="container">
+    <div class="leadmagnet__inner reveal-up">
+      
+      <div class="leadmagnet__info">
+        <div class="leadmagnet__text">
+          <p class="section-eyebrow">Descarga gratuita</p>
+          <h2>El Checklist definitivo de<br />equipamiento para Alta Montaña</h2>
+          <p>47 ítems organizados por categoría, con marcas recomendadas y presupuesto orientativo. El PDF que necesitas antes de tu primera expedición.</p>
         </div>
       </div>
-    </section>
+
+      <div class="leadmagnet__action">
+        <form class="leadmagnet__form" id="leadmagnetForm">
+          <div class="form-group-row">
+            <div class="form-group">
+              <label for="lm-nombre">Nombre</label>
+              <input type="text" id="lm-nombre" class="leadmagnet__input" placeholder="Ej. Juan" required />
+            </div>
+            <div class="form-group">
+              <label for="lm-apellido">Apellido</label>
+              <input type="text" id="lm-apellido" class="leadmagnet__input" placeholder="Ej. Pérez" required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="lm-email">Correo electrónico</label>
+            <input type="email" id="lm-email" class="leadmagnet__input" placeholder="tu@email.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="lm-telefono">Teléfono móvil</label>
+            <input type="tel" id="lm-telefono" class="leadmagnet__input" placeholder="+54 9 11 ...." required />
+          </div>
+
+          <div class="form-group">
+            <label for="lm-pais">País de residencia</label>
+            <input type="text" id="lm-pais" class="leadmagnet__input" placeholder="Ej. Argentina" required />
+          </div>
+
+          <button type="submit" class="btn btn--accent btn--lg w-100">
+            ENVIAR
+          </button>
+        </form>
+        <p class="leadmagnet__disclaimer">Sin spam. Baja en menos de 30 segundos.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   </main>
 
@@ -816,8 +848,8 @@
     <div class="container">
       <div class="footer__top">
         <div class="footer__brand">
-          <a href="#" class="nav__logo">CIMA<span>ABSOLUTA</span></a>
-          <p>Expediciones de alta montaña certificadas UIAGM. Desde los Andes hasta el Himalaya.</p>
+          <a href="#" class="nav__logo">CÚSPIDES</a>
+          <p>Expediciones de alta montaña certificadas por ISAGM.</p>
           <div class="footer__social">
             <a href="#" aria-label="Instagram">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
@@ -833,42 +865,38 @@
         <div class="footer__nav">
           <h4>Expediciones</h4>
           <ul>
-            <li><a href="#">Aconcagua 6.961m</a></li>
-            <li><a href="#">Ojos del Salado 6.893m</a></li>
-            <li><a href="#">Chachani 6.075m</a></li>
-            <li><a href="#">Trekking Patagonia</a></li>
-            <li><a href="#">Himalaya & Nepal</a></li>
+            <li><a href="#">Cerro Eléctrico</a></li>
+            <li><a href="#">Monte Fitz Roy</a></li>
+            <li><a href="#">Laguna de los Tres</a></li>
           </ul>
         </div>
         <div class="footer__nav">
           <h4>Empresa</h4>
           <ul>
             <li><a href="#">Sobre nosotros</a></li>
-            <li><a href="#">Nuestros guías</a></li>
-            <li><a href="#">Certificaciones</a></li>
             <li><a href="#">Política de cancelación</a></li>
-            <li><a href="#">Blog de montaña</a></li>
+            <li><a href="#">Certificaciones</a></li>
           </ul>
         </div>
         <div class="footer__contact">
           <h4>Contacto</h4>
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Mendoza, Argentina
+            Santa Cruz, Argentina
           </p>
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.07h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.7A16 16 0 0 0 15.3 16.09l1-1a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 23 17.02v-.1z"/></svg>
-            +54 9 261 000-0000
+            +54 9 296 612 3456
           </p>
           <p>
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-            hola@cimaabsoluta.com
+            contacto@cuspides.com
           </p>
         </div>
       </div>
       <div class="footer__bottom">
-        <p>© 2025 Cima Absoluta. Todos los derechos reservados.</p>
-        <p>Diseñado para alpinistas, por alpinistas.</p>
+        <p>© 2025 CÚSPIDES. Todos los derechos reservados.</p>
+        <p>Diseñado para los que no tienen miedo.</p>
       </div>
     </div>
   </footer>
